@@ -7,7 +7,7 @@ A way to access the [polygonscan.com api](https://polygonscan.com/apis) using pr
 Mainnet
 
 ```javascript
-var api = require("polygonscan-api").init("NDWVR7SS6Q617EIGNFHY6AJDTS32AZN9NW");
+var api = require("polygonscan-api").init("YourApiKey");
 var balance = api.account.balance("0x0000000000000000000000000000000000001010");
 balance.then(function (balanceData) {
   console.log(balanceData);
