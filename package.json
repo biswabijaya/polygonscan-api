@@ -1,0 +1,54 @@
+{
+  "name": "polygonscan-api",
+  "version": "1.0.1",
+  "description": "API to polygonscan with a simple interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -t 20000",
+    "posttest": "npm run lint",
+    "lint": "jshint lib test",
+    "docs": "documentation build ./lib/init.js -f html -o out",
+    "bundle": "browserify index.js -s polygonscanApi -o dist/bundle.js && git commit ./dist -m bundle && git push",
+    "preversion": "npm run lint && npm run changelog",
+    "postversion": "git push && git push --tags",
+    "changelog": "rm ./docs/CHANGELOG.md && changelog https://github.com/sebs/polygonscan-api all > ./docs/CHANGELOG.md && git add ./docs/CHANGELOG.md && git commit ./docs/CHANGELOG.md -m changelog",
+    "build": "npm run test && npm run docs"
+  },
+  "keywords": [
+    "maticscan",
+    "matic",
+    "polygon",
+    "polygon smart chain",
+    "polygonscan.com",
+    "polygonscan",
+    "blockchain",
+    "api",
+    "transaction",
+    "rest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswabijaya/polygonscan-api.git"
+  },
+  "author": "Biswabijaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biswabijaya/polygonscan-api/issues"
+  },
+  "homepage": "https://github.com/biswabijaya/polygonscan-api#readme",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "chai": "^4.2.0",
+    "changelog": "^1.4.2",
+    "documentation": "^12.1.1",
+    "ink-docstrap": "^1.3.2",
+    "jshint": "^2.10.2",
+    "mocha": "^6.2.0",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "gh-pages": "^2.1.1",
+    "querystring": "^0.2.0"
+  }
+}
