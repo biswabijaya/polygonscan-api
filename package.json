@@ -1,6 +1,6 @@
 {
   "name": "polygonscan-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "API to polygonscan with a simple interface",
   "main": "index.js",
   "scripts": {
