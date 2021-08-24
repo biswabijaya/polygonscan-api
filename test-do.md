@@ -5,7 +5,7 @@ index-test.js - passes
 methods-test.js - passes
 Testnet:
 ```javascript
-var api = init("YourApiKey",'testnet');
+var api = init("YourApiKey",'mumbai');
 testnet-balance-test.js - passes
 testnet-eth-test.js - passes
 testnet-methods-test.js - passes

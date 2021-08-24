@@ -278,7 +278,9 @@ function pickChainUrl(chain) {
 
 
 const MAIN_API_URL = 'https://api.polygonscan.com';
-const TESTNET_API_URL_MAP = {};
+const TESTNET_API_URL_MAP = {
+  mumbai:"https://api-testnet.polygonscan.com/"
+};
 
 module.exports = function(chain, timeout) {
   var client = axios.create({
@@ -338,7 +340,7 @@ const account = require('./account');
 
 /**
  * @param {string} apiKey - (optional) Your Polygonscan APIkey
- * @param {string} chain - (optional) Testnet chain keys [ropsten, rinkeby, kovan]
+ * @param {string} chain - (optional) Testnet chain keys [ropsten, mumbai, kovan]
  * @param {number} timeout - (optional) Timeout in milliseconds for requests, default 10000
  */
 module.exports = function(apiKey, chain, timeout) {

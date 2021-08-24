@@ -22,7 +22,7 @@ Latest
 
 ```javascript
 // apikey, network, timeout
-var api = require('polygonscan-api').init('YourApiKey','rinkeby'. '3000');
+var api = require('polygonscan-api').init('YourApiKey','mumbai'. '3000');
 ```
 
 ## Install

@@ -8,13 +8,12 @@
         "includePattern": ".+\\.js(doc)?$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
-    // "analytics":{"ua":"UA-85700100-1", "domain":"https://sebs.github.io/polygonscan-api/"},
     "plugins": [],
     "templates": {
       "cleverLinks": true,
       "monospaceLinks": false,
       "systemName"            : "polygonscan-api",
       "footer"                : "Access the Polygonscan restful API with this NPM module",
-      "copyright"             :  "Originally created by Sebastian Schürmann forked by Ittikorn S."
+      "copyright"             : "Created by Biswabijaya from forked etherscan structure by Ittikorn S."
   }
 }
