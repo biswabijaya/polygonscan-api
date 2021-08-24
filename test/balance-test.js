@@ -4,13 +4,13 @@ const init = require('../.').init;
 describe('balance', function() {
   it('returns a promise', function( ){
     var api = init();
-    var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+    var balance = api.account.balance('0x0000000000000000000000000000000000001010');
     assert.ok(balance.then);
   });
 
   it('executes the promise', function(done){
     var api = init();
-    var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+    var balance = api.account.balance('0x0000000000000000000000000000000000001010');
     balance.then(function(){
       done();
     });
@@ -18,7 +18,7 @@ describe('balance', function() {
 
   it('has data', function(done){
     var api = init();
-    var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+    var balance = api.account.balance('0x0000000000000000000000000000000000001010');
     balance.then(function(res){
       assert.ok(res);
       done();

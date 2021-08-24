@@ -4,7 +4,7 @@ const init = require('../.').init;
 describe('proxy', function() {
   it('eth.getminedblocks', function(done){
     var api = init();
-    var txlist = api.account.getminedblocks('0x9dd134d14d1e65f84b706d6f205cd5b1cd03a46b');
+    var txlist = api.account.getminedblocks('0x46a3a41bd932244dd08186e4c19f1a7e48cbcdf4');
     txlist.then(function(res){
       assert.ok(res);
       done();

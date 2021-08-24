@@ -6,7 +6,7 @@ describe('api', function() {
   describe('account', function() {
     it('getminedblocks', function(done){
       var api = init();
-      var txlist = api.account.getminedblocks('0x9dd134d14d1e65f84b706d6f205cd5b1cd03a46b');
+      var txlist = api.account.getminedblocks('0x46a3a41bd932244dd08186e4c19f1a7e48cbcdf4');
       txlist.then(function(res){
         assert.ok(res);
         done();
@@ -20,7 +20,7 @@ describe('api', function() {
     //   var api = init();
     //
     //   var supply = api.account.tokenbalance(
-    //     '0x4366ddc115d8cf213c564da36e64c8ebaa30cdbd',
+    //     '0x0000000000000000000000000000000000001010',
     //     'DGD'
     //   );
     //   supply.then(function (res) {
@@ -30,7 +30,7 @@ describe('api', function() {
     // });
     it('tokenbalance by address', function(done) {
       var api = init();
-      var supply = api.account.tokenbalance('0xe04f27eb70e025b78871a2ad7eabe85e61212761', false, '0x57d90b64a1a57749b0f932f1a3395792e12e7055');
+      var supply = api.account.tokenbalance('0x0000000000000000000000000000000000001010', false, '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063');
       supply.then(function(res){
         assert.ok(res);
         done();
@@ -38,7 +38,7 @@ describe('api', function() {
     });
     it('txlist', function(done){
       var api = init();
-      var txlist = api.account.txlist('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+      var txlist = api.account.txlist('0x0000000000000000000000000000000000001010');
       txlist.then(function(res){
         assert.ok(res);
         done();
@@ -54,7 +54,7 @@ describe('api', function() {
     });
     it('txlistinternal by address', function(done){
       var api = init();
-      var txlist = api.account.txlistinternal(null, '0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+      var txlist = api.account.txlistinternal(null, '0x0000000000000000000000000000000000001010');
       txlist.then(function(res) {
         assert.ok(res);
         done();
@@ -62,7 +62,7 @@ describe('api', function() {
     });
     it('balance', function(done){
       var api = init();
-      var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+      var balance = api.account.balance('0x0000000000000000000000000000000000001010');
       balance.then(function(res){
         assert.ok(res);
         done();
@@ -70,7 +70,7 @@ describe('api', function() {
     });
     it('balance multi', function(done){
       var api = init();
-      var balance = api.account.balance(['0xa10d2e55f0f87756d6f99960176120c512eb3e15']);
+      var balance = api.account.balance(['0x0000000000000000000000000000000000001010']);
       balance.then(function(res){
         assert.ok(res);
         done();
@@ -79,8 +79,8 @@ describe('api', function() {
     it('tokentx', function(done){
       var api = init();
       var txlist = api.account.tokentx(
-        '0xa10d2e55f0f87756d6f99960176120c512eb3e15',
-        '0x6beb418fc6e1958204ac8baddcf109b8e9694966',
+        '0x0000000000000000000000000000000000001010',
+        '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
         1, 'latest', 'asc'
       );
       txlist.then(function(res){
@@ -109,7 +109,7 @@ describe('api', function() {
     });
     it('tokensupply by address', function(done){
       var api = init();
-      var supply = api.stats.tokensupply(null, '0x57d90b64a1a57749b0f932f1a3395792e12e7055');
+      var supply = api.stats.tokensupply(null, '0x0000000000000000000000000000000000001010');
       supply.then(function(res){
         assert.ok(res);
         done();
@@ -138,7 +138,7 @@ describe('api', function() {
 
   it('transaction.getstatus', function(done){
     var api = init();
-    var status = api.transaction.getstatus('0x15f8e5ea1079d9a0bb04a4c58ae5fe7654b5b2b4463375ff7ffb490aa0032f3a');
+    var status = api.transaction.getstatus('0x591ca00bf6b404e24e21732023abc0416673beff9586f37e61fb0f07ca560940');
     status.then(function(res){
       assert.ok(res);
       done();
@@ -147,8 +147,8 @@ describe('api', function() {
   // test for bug #31
   // see https://github.com/sebs/etherscan-api/issues/31
   it('contract.getabi for a contract that is not verified by etherscan: error', function(done){
-    var api = init('test', 'ropsten', 10000);
-    var abi = api.contract.getabi('0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413');
+    var api = init();
+    var abi = api.contract.getabi('0x2791bca1f2de4661ed88a30c99a7a9449aa84174');
     abi.then(function(){
       assert.false(true, 'should not be a success');
     }).catch(err=> {

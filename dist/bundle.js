@@ -17,7 +17,7 @@ module.exports = function(getRequest, apiKey) {
      * @param {string} contractaddress - Contract address
      * @example
      *     var supply = api.account.tokenbalance(
-     *       '0x4366ddc115d8cf213c564da36e64c8ebaa30cdbd',
+     *       '0x0000000000000000000000000000000000001010',
      *       '',
      *       '0xe0b7927c4af23765cb51314a0e0521a9645f0e2a' // DGD contract address
      * );
@@ -52,7 +52,7 @@ module.exports = function(getRequest, apiKey) {
      * Returns the balance of a sepcific account
      * @param {string} address - Address
      * @example
-     * var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+     * var balance = api.account.balance('0x0000000000000000000000000000000000001010');
      * @returns {Promise.<object>}
      */
     balance(address) {
@@ -122,7 +122,7 @@ module.exports = function(getRequest, apiKey) {
      * @param {number} offset - Max records to return
      * @param {string} sort - Sort asc/desc
      * @example
-     * var txlist = api.account.txlist('0xa10d2e55f0f87756d6f99960176120c512eb3e15', 1, 'latest', 1, 100, 'asc');
+     * var txlist = api.account.txlist('0x0000000000000000000000000000000000001010', 1, 'latest', 1, 100, 'asc');
      * @returns {Promise.<object>}
      */
     txlist(address, startblock, endblock, page, offset, sort) {
@@ -158,7 +158,7 @@ module.exports = function(getRequest, apiKey) {
     /**
      * Get a list of blocks that a specific account has mineds
      * @example
-     * var txlist = api.account.getminedblocks('0x9dd134d14d1e65f84b706d6f205cd5b1cd03a46b');
+     * var txlist = api.account.getminedblocks('0x46a3a41bd932244dd08186e4c19f1a7e48cbcdf4');
      * @param {string} address - Transaction hash
      */
     getminedblocks(address) {
@@ -177,7 +177,7 @@ module.exports = function(getRequest, apiKey) {
      * @param {string} sort - Sort asc/desc
      * @param {string} contractaddress - Address of ERC20 token contract (if not specified lists transfers for all tokens)
      * @example
-     * var txlist = api.account.tokentx('0xa10d2e55f0f87756d6f99960176120c512eb3e15', '0x5F988D968cb76c34C87e6924Cc1Ef1dCd4dE75da', 1, 'latest', 'asc');
+     * var txlist = api.account.tokentx('0x0000000000000000000000000000000000001010', '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', 1, 'latest', 'asc');
      * @returns {Promise.<object>}
      */
     tokentx(address, contractaddress, startblock, endblock, sort) {
@@ -242,15 +242,15 @@ module.exports = function(getRequest, apiKey) {
      * @param {string} address - Contract address
      * @example
      * api.contract
-     *  .getabi('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
-     *  .at('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
-     *  .memberId('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
+     *  .getabi('0x2791bca1f2de4661ed88a30c99a7a9449aa84174')
+     *  .at('0x2791bca1f2de4661ed88a30c99a7a9449aa84174')
+     *  .memberId('0x2791bca1f2de4661ed88a30c99a7a9449aa84174')
      *  .then(console.log)
      * @returns {Promise.<object>}
      */
     getabi(address) {
       const module = 'contract';
-      const action = 'getabi';
+      const action = 'getsourcecode';
 
       var query = querystring.stringify({
         module, action, address, apiKey
@@ -344,7 +344,7 @@ const account = require('./account');
 module.exports = function(apiKey, chain, timeout) {
 
   if (!apiKey) {
-    apiKey = 'YourApiKeyToken';
+    apiKey = "NDWVR7SS6Q617EIGNFHY6AJDTS32AZN9NW";
   }
 
 
@@ -715,7 +715,7 @@ module.exports = function(getRequest, apiKey) {
      * @param {string} tokenname - Name of the Token
      * @param {string} contractaddress - Address from token contract
      * @example
-     * var supply = api.stats.tokensupply(null, '0x57d90b64a1a57749b0f932f1a3395792e12e7055');
+     * var supply = api.stats.tokensupply(null, '0x0000000000000000000000000000000000001010');
      * @returns {Promise.<object>}
      */
     tokensupply(tokenname, contractaddress) {

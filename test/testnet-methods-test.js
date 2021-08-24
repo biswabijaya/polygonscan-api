@@ -7,7 +7,7 @@ describe('testnet methods', function () {
     var api;
 
     beforeEach(function () {
-      api = init('YourApiKeyToken', 'ropsten');
+      api = init("YourApiKeyToken", 'ropsten');
     });
 
     xit('getminedblocks', function (done) {
@@ -39,7 +39,7 @@ describe('testnet methods', function () {
       var supply = api.account.tokenbalance(
         '0xe04f27eb70e025b78871a2ad7eabe85e61212761',
         false,
-        '0x57d90b64a1a57749b0f932f1a3395792e12e7055'
+        '0x0000000000000000000000000000000000001010'
       );
       supply.then(function (res) {
         assert.ok(res);
@@ -50,11 +50,11 @@ describe('testnet methods', function () {
     it('tokentx', function (done) {
       /**
        * No transaction found in testnet
-       * var txlist = api.account.txlist('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+       * var txlist = api.account.txlist('0x0000000000000000000000000000000000001010');
        */
       var txlist = api.account.tokentx(
-        '0x293bae8584ed8df4a0319d95ffef5fb3645a22b6',
-        '0x4fa5333ecfe1afca2624e14b039268c4591ef8b9'
+        '0x0000000000000000000000000000000000001010',
+        '0x2791bca1f2de4661ed88a30c99a7a9449aa84174'
       );
 
       txlist.then(function (res) {
@@ -66,7 +66,7 @@ describe('testnet methods', function () {
     xit('txlist', function (done) {
       /**
        * No transaction found in testnet
-       * var txlist = api.account.txlist('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+       * var txlist = api.account.txlist('0x0000000000000000000000000000000000001010');
        */
       var txlist = api.account.txlist('0x3FAcfa472e86E3EDaEaa837f6BA038ac01F7F539');
       txlist.then(function (res) {
@@ -93,7 +93,7 @@ describe('testnet methods', function () {
 
     it('balance', function (done) {
 
-      var balance = api.account.balance('0xa10d2e55f0f87756d6f99960176120c512eb3e15');
+      var balance = api.account.balance('0x0000000000000000000000000000000000001010');
       balance.then(function (res) {
         assert.ok(res);
         done();
@@ -101,7 +101,7 @@ describe('testnet methods', function () {
     });
     it('balance multi', function (done) {
 
-      var balance = api.account.balance(['0xa10d2e55f0f87756d6f99960176120c512eb3e15']);
+      var balance = api.account.balance(['0x0000000000000000000000000000000000001010']);
       balance.then(function (res) {
         assert.ok(res);
         done();
@@ -112,7 +112,7 @@ describe('testnet methods', function () {
     var api;
 
     beforeEach(function () {
-      api = init('YourApiKeyToken', 'ropsten');
+      api = init("YourApiKeyToken", 'ropsten');
     });
 
     it('ethsupply', function (done) {
@@ -134,7 +134,7 @@ describe('testnet methods', function () {
     });
     it('tokensupply by address', function (done) {
 
-      var supply = api.stats.tokensupply(null, '0x57d90b64a1a57749b0f932f1a3395792e12e7055');
+      var supply = api.stats.tokensupply(null, '0x0000000000000000000000000000000000001010');
       supply.then(function (res) {
         assert.ok(res);
         done();
@@ -153,7 +153,7 @@ describe('testnet methods', function () {
 
 
   it('block.getblockreward', function (done) {
-    var api = init('YourApiKeyToken', 'ropsten');
+    var api = init("YourApiKeyToken", 'ropsten');
 
     var blockreward = api.block.getblockreward();
     blockreward.then(function (res) {
@@ -163,8 +163,8 @@ describe('testnet methods', function () {
   });
 
   it('transaction.getstatus', function (done) {
-    var api = init('YourApiKeyToken', 'ropsten');
-    var status = api.transaction.getstatus('0x15f8e5ea1079d9a0bb04a4c58ae5fe7654b5b2b4463375ff7ffb490aa0032f3a');
+    var api = init("YourApiKeyToken", 'ropsten');
+    var status = api.transaction.getstatus('0x591ca00bf6b404e24e21732023abc0416673beff9586f37e61fb0f07ca560940');
     status.then(function (res) {
       assert.ok(res);
       done();
@@ -172,10 +172,10 @@ describe('testnet methods', function () {
   });
 
   xit('contract.getabi', function (done) {
-    var api = init('YourApiKeyToken', 'ropsten');
+    var api = init("YourApiKeyToken", 'ropsten');
     // Has no contract with this address
-    //  var abi = api.contract.getabi('0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413');
-    var abi = api.contract.getabi('0xCe9bb652DD190454B91CEe1f7D5fE6Bac3Ca85Fc');
+    //  var abi = api.contract.getabi('0x2791bca1f2de4661ed88a30c99a7a9449aa84174');
+    var abi = api.contract.getabi('0x2791bca1f2de4661ed88a30c99a7a9449aa84174');
     abi.then(function (res) {
       assert.ok(res);
       done();
@@ -187,7 +187,7 @@ describe('testnet methods', function () {
     var api;
 
     beforeEach(function () {
-      api = init('YourApiKeyToken', 'ropsten');
+      api = init("YourApiKeyToken", 'ropsten');
     });
 
     it('proxy.eth_blockNumber', function (done) {
