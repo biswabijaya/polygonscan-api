@@ -1,6 +1,6 @@
 {
   "name": "polygonscan-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "API to polygonscan with a simple interface",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,8 @@
     "polygon smart chain",
     "polygonscan.com",
     "polygonscan",
+    "polygon scanner",
+    "polygon explorer",
     "blockchain",
     "api",
     "transaction",
